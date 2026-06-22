@@ -600,6 +600,58 @@ svg { fill: currentColor; width: 24px; height: 24px; flex-shrink: 0; }
 }
 .practice-card__link:hover { letter-spacing: 0.08em; }
 
+/* ─── PROCESS STRIP ─────────────────────────────────────────── */
+.process {
+  padding: 80px 0;
+  background: var(--navy);
+}
+.process .section-label { color: var(--gold); }
+.process .section-title { color: var(--white); text-align: center; margin-bottom: 56px; }
+.process__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+}
+.process-step {
+  flex: 1 1 180px;
+  max-width: 220px;
+  text-align: center;
+  padding: 20px 16px;
+}
+.process-step__num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.process-step h3 {
+  font-size: 1rem;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.process-step p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.65;
+}
+.process-step__arrow {
+  font-size: 1.5rem;
+  color: rgba(201,162,39,0.4);
+  flex-shrink: 0;
+  padding: 0 8px;
+  margin-top: -20px;
+}
+@media (max-width: 768px) {
+  .process__grid { flex-direction: column; }
+  .process-step__arrow { transform: rotate(90deg); margin: 0; }
+  .process-step { max-width: 100%; }
+}
+
 /* ─── WHY CHOOSE US ──────────────────────────────────────────── */
 .why {
   padding: 96px 0;
@@ -1165,6 +1217,8 @@ svg { fill: currentColor; width: 24px; height: 24px; flex-shrink: 0; }
   .hamburger { display: flex; z-index: 1000; position: relative; }
   .practice__grid { grid-template-columns: 1fr; }
   .practice-card--featured { order: -1; }
+  .process__grid { flex-direction: column; }
+  .process-step__arrow { transform: rotate(90deg); }
   .team__grid { grid-template-columns: 1fr; }
   .testimonials__grid { grid-template-columns: 1fr; }
   .awards__grid { grid-template-columns: repeat(2, 1fr); }
