@@ -250,7 +250,7 @@ svg { fill: currentColor; width: 24px; height: 24px; flex-shrink: 0; }
 .hero {
   width: 100%;
   background: url('../images/hero-team.png') center center / cover no-repeat;
-  aspect-ratio: 16 / 6;
+  aspect-ratio: 16 / 5.5;
 }
 
 /* ─── TRUST STRIP ──────────────────────────────────────────────── */
