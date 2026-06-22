@@ -253,8 +253,8 @@ svg { fill: currentColor; width: 24px; height: 24px; flex-shrink: 0; }
   display: flex;
   align-items: center;
   background:
-    linear-gradient(to right, rgba(13,27,53,0.92) 0%, rgba(13,27,53,0.7) 60%, rgba(13,27,53,0.4) 100%),
-    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1800&auto=format&fit=crop&q=80') center/cover no-repeat;
+    linear-gradient(to right, rgba(13,27,53,0.88) 0%, rgba(13,27,53,0.65) 55%, rgba(13,27,53,0.35) 100%),
+    url('../images/hero-team.png') center/cover no-repeat;
   overflow: hidden;
 }
 .hero__overlay {
