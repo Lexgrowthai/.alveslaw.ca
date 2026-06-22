@@ -63,6 +63,25 @@ document.querySelectorAll(
   revealObserver.observe(el);
 });
 
+/* ─── FAQ ACCORDION ──────────────────────────────────────────── */
+document.querySelectorAll('.faq__question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item   = btn.closest('.faq__item');
+    const answer = item.querySelector('.faq__answer');
+    const isOpen = btn.classList.contains('open');
+
+    document.querySelectorAll('.faq__question.open').forEach(b => {
+      b.classList.remove('open');
+      b.closest('.faq__item').querySelector('.faq__answer').classList.remove('open');
+    });
+
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  });
+});
+
 /* ─── FORM SUBMIT ────────────────────────────────────────────── */
 document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
