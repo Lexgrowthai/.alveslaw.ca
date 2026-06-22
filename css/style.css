@@ -248,9 +248,193 @@ svg { fill: currentColor; width: 24px; height: 24px; flex-shrink: 0; }
 
 /* ─── HERO ─────────────────────────────────────────────────────── */
 .hero {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(to right, rgba(13,27,53,0.92) 0%, rgba(13,27,53,0.7) 60%, rgba(13,27,53,0.4) 100%),
+    url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=1800&auto=format&fit=crop&q=80') center/cover no-repeat;
+  overflow: hidden;
+}
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at bottom left, rgba(201,162,39,0.08) 0%, transparent 60%);
+}
+.hero__particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 100px 24px;
+}
+.hero__badge {
+  display: inline-block;
+  background: rgba(201,162,39,0.15);
+  border: 1px solid rgba(201,162,39,0.4);
+  color: var(--gold);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero__headline {
+  font-size: clamp(3rem, 6.5vw, 5.5rem);
+  color: var(--white);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 28px;
+}
+.hero__headline em { font-style: normal; color: var(--gold); }
+.hero__sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.8);
+  max-width: 560px;
+  margin-bottom: 44px;
+  line-height: 1.85;
+}
+.hero__cta { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hero__scroll span {
+  width: 2px;
+  height: 48px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.5));
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse {
+  0%,100% { opacity: 0; transform: scaleY(0) translateY(-20px); }
+  50% { opacity: 1; transform: scaleY(1) translateY(0); }
+}
+
+/* ─── INSIGHTS ───────────────────────────────────────────────── */
+.insights {
+  padding: 96px 0;
+  background: var(--white);
+}
+.insights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 0;
+}
+.insight-card {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--gray-light);
+  background: var(--white);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+.insight-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+  border-color: rgba(201,162,39,0.3);
+}
+.insight-card__image {
+  height: 200px;
+  background: var(--off-white);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.insight-card__image-placeholder {
   width: 100%;
-  background: url('../images/hero-team.png') center center / cover no-repeat;
-  aspect-ratio: 16 / 5.5;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  gap: 8px;
+  flex-direction: column;
+}
+.insight-card__image-placeholder svg {
+  width: 36px;
+  height: 36px;
+  color: var(--gray-light);
+}
+.insight-card__image-1 { background: linear-gradient(135deg, #e8eaf0 0%, #d4d8e8 100%); }
+.insight-card__image-2 { background: linear-gradient(135deg, #e8eef0 0%, #d4e4e8 100%); }
+.insight-card__image-3 { background: linear-gradient(135deg, #f0ece8 0%, #e8dfd4 100%); }
+.insight-card__category {
+  display: inline-block;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.insight-card__body {
+  padding: 28px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.insight-card__meta {
+  font-size: 0.75rem;
+  color: var(--gray);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.insight-card__meta span { display: flex; align-items: center; gap: 4px; }
+.insight-card__meta svg { width: 12px; height: 12px; }
+.insight-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.35;
+}
+.insight-card p {
+  font-size: 0.88rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  flex: 1;
+  margin-bottom: 20px;
+}
+.insight-card__link {
+  font-size: 0.83rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap var(--transition);
+}
+.insight-card__link:hover { gap: 10px; }
+
+@media (max-width: 768px) {
+  .insights__grid { grid-template-columns: 1fr; }
 }
 
 /* ─── TRUST STRIP ──────────────────────────────────────────────── */
