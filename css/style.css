@@ -832,6 +832,15 @@ svg { fill: currentColor; width: 24px; height: 24px; flex-shrink: 0; }
   color: var(--gold-dark);
 }
 
+/* 6-card team grid */
+.team__grid--six {
+  grid-template-columns: repeat(3, 1fr);
+}
+/* Support staff card — green tint title */
+.attorney-card--support .attorney-card__title {
+  color: #3d6b55;
+}
+
 /* ─── TESTIMONIALS ──────────────────────────────────────────── */
 .testimonials {
   padding: 96px 0;
